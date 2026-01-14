@@ -154,3 +154,22 @@ Our task: reverse the string in-place using O(1) extra memory.
 Reversal doesn’t require extra arrays—careful pointer manipulation is enough.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/23f0eed1-8c35-40c7-af77-af488741b9be" />
+
+Question: 136 – Single Number
+
+💻 Approach:
+We are given an array where every element appears twice except one.  
+ The goal is to find that unique element in linear time and constant space.  
+🔑 Key Insight:
+ Using the XOR (^) operator
+a ^ a = 0 → duplicate elements cancel out
+a ^ 0 = a → the unique element remains
+By XOR-ing all elements together, all pairs vanish, leaving only the single number.
+
+This allows us to solve the problem in one pass without extra memory.  
+⏱ Time Complexity: O(n)  
+ 📦 Space Complexity: O(1)  
+💡 DSA Lesson Reinforced:
+ Sometimes the most optimal solution isn’t about data structures—it’s about understanding bitwise properties.
+
+ <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/086ff97b-2be3-4007-8292-466d247f4455" />
