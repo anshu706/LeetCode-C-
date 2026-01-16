@@ -173,3 +173,36 @@ This allows us to solve the problem in one pass without extra memory.
  Sometimes the most optimal solution isn’t about data structures—it’s about understanding bitwise properties.
 
  <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/086ff97b-2be3-4007-8292-466d247f4455" />
+
+Question: 217 – Contains Duplicate
+💻 Approach:  
+We are given an integer array nums.
+Our task: determine whether any element appears at least twice in the array.  
+1️⃣ Sort the array to bring duplicate values next to each other.  
+2️⃣ Traverse the array and compare each element with the next one.  
+3️⃣ If any adjacent elements are equal, return true.  
+4️⃣ If no duplicates are found after traversal, return false.  
+  
+⏱ Time Complexity: O(n log n) (due to sorting)  
+📦 Space Complexity: O(1) (in-place sort, ignoring input modification)  
+✨ Key Insight:
+Sometimes a simple preprocessing step like sorting can significantly simplify the problem logic.  
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/034624e5-5b85-4f19-920c-572c39275218" />
+
+Question: 66 – Plus One  
+💻 Approach: 
+We are given a large integer represented as an array of digits.
+Our task: increment the number by one and return the resulting digit array.  
+1️⃣ Start traversing the digits from the last index (least significant digit).  
+2️⃣ If the current digit is less than 9, increment it and return the array.  
+3️⃣ If the digit is 9, set it to 0 and continue moving left (carry propagation).  
+4️⃣ If all digits become 0, insert 1 at the beginning of the array.  
+5️⃣ Return the final updated digits.  
+
+⏱ Time Complexity: O(n)  
+📦 Space Complexity: O(1) (in-place modification, excluding output)  
+✨ Key Insight:
+Handling carry correctly is the core challenge—once mastered, the solution becomes very intuitive.  
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9eb95ded-d1b4-45b2-b71b-a7a2f06205b4" />
