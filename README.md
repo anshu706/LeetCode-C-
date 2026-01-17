@@ -206,3 +206,21 @@ Our task: increment the number by one and return the resulting digit array.
 Handling carry correctly is the core challenge—once mastered, the solution becomes very intuitive.  
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9eb95ded-d1b4-45b2-b71b-a7a2f06205b4" />
+
+Question: 13 – Roman to Integer  
+💻 Approach:
+We are given a Roman numeral string and need to convert it into its integer value.  
+Key idea: 
+ Roman numerals are usually written from larger to smaller values, except when subtraction is involved (like IV, IX, CM).  
+1️⃣ Map each Roman symbol to its integer value.  
+ 2️⃣ Traverse the string from left to right.  
+ 3️⃣ If the current symbol is smaller than the next one, subtract it.  
+ 4️⃣ Otherwise, add it to the result.  
+ 5️⃣ Return the accumulated sum.  
+
+ ⏱ Time Complexity: O(n)  
+ 📦 Space Complexity: O(1)  
+✨ Key Insight:
+ The trick isn’t memorizing Roman rules—it’s recognizing that relative order matters more than absolute values.
+ 
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/f5961a6f-9caf-40ab-9b64-6bcf04f1c200" />
