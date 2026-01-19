@@ -247,3 +247,23 @@ The maximum subarray either extends the previous subarray or starts fresh at the
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/1baf3000-e3db-480f-ae45-c3f60a4a9e13" />
 
+Question: 104 – Maximum Depth of Binary Tree
+
+💻 Approach:
+We are given the root of a binary tree.
+Our task: find the maximum depth, i.e., the number of nodes on the longest path from the root to the farthest leaf.
+
+1️⃣ If the current node is NULL, return 0 (base case).  
+2️⃣ Recursively compute the depth of the left subtree.  
+3️⃣ Recursively compute the depth of the right subtree.  
+4️⃣ Take the maximum of left and right depths and add 1 for the current node.  
+5️⃣ Return the final depth.  
+
+⏱ Time Complexity: O(n)  
+ (each node is visited exactly once)  
+📦 Space Complexity: O(h)  
+ (where h is the height of the tree due to recursion stack; worst case O(n))  
+✨ Key Insight:
+Tree problems often become simple once you clearly define the base case and trust recursion to handle subtrees correctly.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d512a78f-604b-42d7-ade9-5e134d4d6a6b" />
