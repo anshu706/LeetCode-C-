@@ -267,3 +267,26 @@ Our task: find the maximum depth, i.e., the number of nodes on the longest path 
 Tree problems often become simple once you clearly define the base case and trust recursion to handle subtrees correctly.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d512a78f-604b-42d7-ade9-5e134d4d6a6b" />
+
+Question: 543 – Diameter of Binary Tree
+💻 Approach:
+We are given the root of a binary tree.
+Our task is to find the diameter of the tree, defined as the length (number of edges) of the longest path between any two nodes.
+ This path may or may not pass through the root.
+1️⃣ Use Depth-First Search (DFS) to compute the height of each subtree.
+2️⃣ At every node, calculate the possible diameter passing through that node as:
+ left subtree height + right subtree height.
+3️⃣ Maintain a variable to track the maximum diameter found so far.
+4️⃣ Return the height of the current node as:
+ 1 + max(left height, right height) to support parent calculations.
+5️⃣ After traversing the entire tree, return the stored maximum diameter.
+
+
+⏱ Time Complexity: O(n) — each node is visited once.  
+📦 Space Complexity: O(h) — recursion stack, where h is the height of the tree
+ (O(n) in the worst case of a skewed tree).  
+✨ Key Insight:
+The diameter of a binary tree is not the same as its height.  
+ It’s about combining heights from both sides at every node.  
+ 
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d02e0172-f899-4fcc-a3fd-de6fa9348cfb" />
