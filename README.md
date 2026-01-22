@@ -269,18 +269,18 @@ Tree problems often become simple once you clearly define the base case and trus
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d512a78f-604b-42d7-ade9-5e134d4d6a6b" />
 
 Question: 543 – Diameter of Binary Tree
+
 💻 Approach:
 We are given the root of a binary tree.
-Our task is to find the diameter of the tree, defined as the length (number of edges) of the longest path between any two nodes.
- This path may or may not pass through the root.
-1️⃣ Use Depth-First Search (DFS) to compute the height of each subtree.
+Our task is to find the diameter of the tree, defined as the length (number of edges) of the longest path between any two nodes.  
+This path may or may not pass through the root.  
+1️⃣ Use Depth-First Search (DFS) to compute the height of each subtree.  
 2️⃣ At every node, calculate the possible diameter passing through that node as:
- left subtree height + right subtree height.
-3️⃣ Maintain a variable to track the maximum diameter found so far.
+ left subtree height + right subtree height.  
+3️⃣ Maintain a variable to track the maximum diameter found so far.  
 4️⃣ Return the height of the current node as:
- 1 + max(left height, right height) to support parent calculations.
-5️⃣ After traversing the entire tree, return the stored maximum diameter.
-
+ 1 + max(left height, right height) to support parent calculations.  
+5️⃣ After traversing the entire tree, return the stored maximum diameter.  
 
 ⏱ Time Complexity: O(n) — each node is visited once.  
 📦 Space Complexity: O(h) — recursion stack, where h is the height of the tree
@@ -290,3 +290,29 @@ The diameter of a binary tree is not the same as its height.
  It’s about combining heights from both sides at every node.  
  
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d02e0172-f899-4fcc-a3fd-de6fa9348cfb" />
+
+Question: 50 – Pow(x, n)
+💻 Approach:
+We are given a number x and an integer n.  
+Our task: compute xnx^nxn efficiently, even when n is very large or negative.  
+Instead of multiplying x repeatedly (which would be slow), we use Binary Exponentiation.  
+1️⃣ Handle base cases upfront:  
+If n == 0, return 1.  
+If x == 0, return 0.  
+If x == 1 or x == -1, return the result directly based on n.  
+2️⃣ Convert n into a long variable to safely handle large negative values.  
+3️⃣ If n is negative:  
+Convert the problem to (1/x)−n(1/x)^{-n}(1/x)−n.  
+4️⃣ Initialize ans = 1.  
+5️⃣ While n > 0:  
+If n is odd, multiply ans by x.  
+Square x.  
+Divide n by 2.  
+6️⃣ Return ans as the final result.  
+
+⏱ Time Complexity: O(log n)  
+📦 Space Complexity: O(1)  
+✨ Key Insight:
+Breaking the exponent into binary form is the trick—each bit decides whether the current power of x contributes to the final answer.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2226a18b-8406-47f4-ae35-c08b3fcd5bda" />
