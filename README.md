@@ -316,3 +316,26 @@ Divide n by 2.
 Breaking the exponent into binary form is the trick—each bit decides whether the current power of x contributes to the final answer.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2226a18b-8406-47f4-ae35-c08b3fcd5bda" />
+
+Question: 121 – Best Time to Buy and Sell Stock
+
+💻 Approach:  
+We are given an array where each element represents the stock price on a given day.
+Our goal is to maximize profit by buying once and selling once in the future.
+
+1️⃣ Initialize bestBuy as the price on day 0 (minimum price seen so far).  
+2️⃣ Initialize maxProfit as 0.  
+3️⃣ Traverse the array from day 1 onwards.  
+4️⃣ For each day:    
+Calculate the profit if we sell today (current price - bestBuy).  
+Update maxProfit if this profit is higher.  
+Update bestBuy if today’s price is lower than the previous best.  
+5️⃣ Return maxProfit.
+
+⏱ Time Complexity: O(n)  
+📦 Space Complexity: O(1)  
+✨ Key Insight: 
+The real trick isn’t finding the maximum difference—it’s tracking the minimum price before the current day.
+Once that clicks, the solution becomes straightforward.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/75dd3875-245e-434b-b311-06d088e912c9" />
