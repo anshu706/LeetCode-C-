@@ -339,3 +339,24 @@ The real trick isn’t finding the maximum difference—it’s tracking the mini
 Once that clicks, the solution becomes straightforward.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/75dd3875-245e-434b-b311-06d088e912c9" />
+
+Question: 141 – Linked List Cycle
+
+💻 Approach:
+We are given the head of a singly linked list.  
+Our task: determine whether the linked list contains a cycle.  
+To solve this efficiently, we use Floyd’s Cycle Detection Algorithm (Tortoise & Hare).  
+1️⃣ Initialize two pointers:  
+slow moves one step at a time  
+fast moves two steps at a time  
+2️⃣ Traverse the list while fast and fast->next are not NULL.  
+3️⃣ Move slow by one node and fast by two nodes.  
+4️⃣ If at any point slow == fast, a cycle exists → return true.  
+5️⃣ If traversal ends without collision, no cycle exists → return false.  
+
+⏱ Time Complexity: O(n)  
+📦 Space Complexity: O(1) (no extra memory used)  
+✨ Key Insight:
+Detecting cycles doesn’t require extra data structures—smart pointer movement is enough.  
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed3677ea-f05e-4248-8f92-cc0d2a5f11ba" />
