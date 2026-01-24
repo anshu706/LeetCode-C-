@@ -360,3 +360,28 @@ fast moves two steps at a time
 Detecting cycles doesn’t require extra data structures—smart pointer movement is enough.  
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed3677ea-f05e-4248-8f92-cc0d2a5f11ba" />
+
+
+Question: 142 – Linked List Cycle II
+💻 Approach:
+We are given the head of a linked list and need to find the node where a cycle begins.  
+ If no cycle exists, return null. 
+ 
+🔍 Strategy Used: Floyd’s Cycle Detection Algorithm (Tortoise & Hare)  
+1️⃣ Initialize two pointers:  
+Slow (s) → moves one step at a time  
+Fast (f) → moves two steps at a time  
+2️⃣ Traverse the list:  
+If fast and slow meet, a cycle is confirmed.  
+3️⃣ To find the starting node of the cycle:  
+Create a new pointer start at head.  
+Move start and slow one step at a time.  
+The node where they meet is the cycle entry point.  
+4️⃣ If fast reaches NULL, there is no cycle.  
+
+⏱ Time Complexity: O(n)  
+📦 Space Complexity: O(1) (no extra data structures used)  
+✨ Key Insight:
+Detecting a cycle is only half the problem — finding where it starts is the real challenge.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/799b4c89-160d-4eb4-8dc6-fcd52c0f2a4d" />
