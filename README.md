@@ -385,3 +385,26 @@ The node where they meet is the cycle entry point.
 Detecting a cycle is only half the problem — finding where it starts is the real challenge.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/799b4c89-160d-4eb4-8dc6-fcd52c0f2a4d" />
+
+Question: 226 – Invert Binary Tree  
+💻 Approach:  
+We are given the root of a binary tree.  
+Our task is to invert the tree — that is, swap the left and right children of every node.  
+We use recursion to solve this efficiently.  
+
+1️⃣ If the current node is NULL, return NULL (base case).  
+2️⃣ Recursively invert the left subtree.  
+3️⃣ Recursively invert the right subtree.  
+4️⃣ Swap the left and right child pointers of the current node.  
+5️⃣ Return the root after inversion.  
+
+⏱ Time Complexity: O(n)  
+(Each node is visited exactly once)  
+📦 Space Complexity: O(h)  
+(Recursive call stack, where h is the height of the tree)  
+✨ Key Insight:
+Tree problems often become simpler when you think recursively — invert subtrees first, then fix the current node.  
+This process continues until all nodes are processed.  
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/e3ef7baa-8267-405c-8215-87eb1e8265d9" />
+
