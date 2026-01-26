@@ -427,7 +427,7 @@ Our task is to find their Lowest Common Ancestor (LCA) — the lowest node in th
 6️⃣ If both sides return NULL, return NULL.  
 
 ⏱ Time Complexity: O(n)  
-(Each node is visited once.)
+(Each node is visited once.)  
 📦 Space Complexity: O(h)  
 (Recursive call stack, where h is the height of the tree.)
 ✨ Key Insight:
