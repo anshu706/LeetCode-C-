@@ -408,3 +408,30 @@ This process continues until all nodes are processed.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/e3ef7baa-8267-405c-8215-87eb1e8265d9" />
 
+
+Question: 236 – Lowest Common Ancestor of a Binary Tree
+
+💻 Approach:
+We are given a binary tree and two nodes p and q.  
+Our task is to find their Lowest Common Ancestor (LCA) — the lowest node in the tree that has both p and q as descendants (a node can be a descendant of itself).  
+🔍 Key idea:
+ We use recursive DFS to explore the tree and identify where p and q appear.
+ 
+1️⃣ If the current node is NULL, return NULL.  
+2️⃣ If the current node matches p or q, return the current node.  
+ (This handles cases where one node is an ancestor of the other.)  
+3️⃣ Recursively search for p and q in the left and right subtrees.  
+4️⃣ If both left and right recursive calls return non-null,  
+ → the current node is the LCA.  
+5️⃣ If only one side returns a non-null node, propagate that value upward.  
+6️⃣ If both sides return NULL, return NULL.  
+
+⏱ Time Complexity: O(n)  
+(Each node is visited once.)
+📦 Space Complexity: O(h)  
+(Recursive call stack, where h is the height of the tree.)
+✨ Key Insight:
+You don’t need parent pointers or extra data structures.
+The LCA emerges naturally from post-order traversal logic.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/6406b5de-e5a8-4686-89cd-64ecfc76323b" />
