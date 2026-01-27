@@ -435,3 +435,26 @@ You don’t need parent pointers or extra data structures.
 The LCA emerges naturally from post-order traversal logic.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/6406b5de-e5a8-4686-89cd-64ecfc76323b" />
+
+Question: 199 – Binary Tree Right Side View
+💻 Approach:
+We are given the root of a binary tree.  
+Our goal is to return the nodes visible when the tree is viewed from the right side, ordered from top to bottom.  
+To solve this, we use Level Order Traversal (BFS).  
+1️⃣ If the tree is empty, return an empty result.  
+2️⃣ Use a queue to traverse the tree level by level.  
+3️⃣ For each level, count the number of nodes (level size).  
+4️⃣ Traverse all nodes in the current level:  
+Add left and right children to the queue for the next level.  
+When processing the last node of the level, store its value (this node is visible from the right side).  
+5️⃣ Repeat until all levels are processed.  
+6️⃣ Return the collected right-side view values.  
+
+⏱ Time Complexity: O(n)  
+Each node is visited exactly once.  
+📦 Space Complexity: O(n)  
+Queue storage for level-order traversal in the worst case.  
+✨ Key Insight:  
+This problem isn’t about “right children only”— it’s about identifying the last node at every depth level, regardless of tree shape.  
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/af5e500d-ca28-4fab-86bf-f6d8e71a4e50" />
