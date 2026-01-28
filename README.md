@@ -458,3 +458,26 @@ Queue storage for level-order traversal in the worst case.
 This problem isn’t about “right children only”— it’s about identifying the last node at every depth level, regardless of tree shape.  
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/af5e500d-ca28-4fab-86bf-f6d8e71a4e50" />
+
+Question: 24 – Swap Nodes in Pairs  
+💻 Approach:  
+We are given a singly linked list, and our task is to swap every two adjacent nodes without changing node values—only pointers.  
+To simplify pointer manipulation, we use a dummy node before the head.  
+1️⃣ Create a dummy node and point it to the head of the list.  
+ This helps handle edge cases (like swapping the first pair).  
+2️⃣ Use a pointer (temp) starting from the dummy node.  
+3️⃣ While there are at least two nodes ahead, identify the pair:  
+c1 → first node  
+c2 → second node  
+4️⃣ Swap the nodes by rearranging pointers:  
+Point c1 to c2->next  
+Point c2 to c1  
+Connect temp to c2 (new head of the pair)   
+5️⃣ Move temp forward and repeat until the list ends.  
+6️⃣ Return dummy->next as the new head.  
+⏱ Time Complexity: O(n)  
+ (Each node is visited once)  
+📦 Space Complexity: O(1)  
+ (Constant extra space; swaps done in-place)  
+ 
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2c6f76c4-8416-467f-bf9f-0dcbad07be82" />
