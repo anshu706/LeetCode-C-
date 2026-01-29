@@ -481,3 +481,22 @@ Connect temp to c2 (new head of the pair)
  (Constant extra space; swaps done in-place)  
  
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2c6f76c4-8416-467f-bf9f-0dcbad07be82" />
+
+
+Question: 2351 – First Letter to Appear Twice  
+💻 Approach:  
+We are given a string of lowercase English letters.  
+Our task: return the first character whose second occurrence appears earliest in the string.  
+Instead of tracking all positions, we can solve this efficiently in one pass.  
+1️⃣ Create an integer array of size 26 to store the frequency of each character.  
+2️⃣ Traverse the string from left to right.  
+3️⃣ For each character, increment its frequency count.  
+4️⃣ The moment any character’s count becomes 2, return that character immediately.  
+5️⃣ Since the problem guarantees at least one repeated character, this approach always succeeds.  
+
+⏱ Time Complexity: O(n)  
+📦 Space Complexity: O(1) (fixed-size array of 26 letters)  
+✨ Key Insight:  
+You don’t need to store indices or compare multiple characters—early exit during traversal is the smartest optimization here.  
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4eff8877-ad25-4527-9b66-4b5f845a86b1" />
