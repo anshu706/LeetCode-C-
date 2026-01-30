@@ -500,3 +500,21 @@ Instead of tracking all positions, we can solve this efficiently in one pass.
 You don’t need to store indices or compare multiple characters—early exit during traversal is the smartest optimization here.  
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4eff8877-ad25-4527-9b66-4b5f845a86b1" />
+
+Question: 1137 – N-th Tribonacci Number  
+💻 Approach:  
+We are given an integer n and need to compute the n-th Tribonacci number, where:  
+T0 = 0, T1 = 1, T2 = 1  
+Tn = T(n−1) + T(n−2) + T(n−3) for n ≥ 3    
+1️⃣ Handle base cases directly (n = 0, 1, 2) to avoid unnecessary computation.  
+2️⃣ Use an array arr[] to store previously computed Tribonacci values.  
+3️⃣ Initialize the first three values according to the definition.  
+4️⃣ Iterate from 3 to n, building the solution bottom-up using Dynamic Programming.  
+5️⃣ Return arr[n] as the final answer.  
+
+⏱ Time Complexity: O(n)  
+📦 Space Complexity: O(n)  
+✨ Key Insight:
+This problem is a classic example of DP with overlapping subproblems — once the recurrence relation is clear, the solution becomes straightforward.  
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2556fdd5-90d2-4982-8b78-efed7b2b0f26" />
