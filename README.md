@@ -518,3 +518,28 @@ Tn = T(n−1) + T(n−2) + T(n−3) for n ≥ 3
 This problem is a classic example of DP with overlapping subproblems — once the recurrence relation is clear, the solution becomes straightforward.  
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2556fdd5-90d2-4982-8b78-efed7b2b0f26" />
+
+
+Question: 876 – Middle of the Linked List  
+
+💻 Approach:  
+We are given the head of a singly linked list.  
+Our task: return the middle node of the list.  
+If there are two middle nodes, return the second one.  
+To solve this efficiently, we use the two-pointer technique:
+
+1️⃣ Initialize two pointers:  
+slow → moves one step at a time  
+fast → moves two steps at a time  
+2️⃣ Traverse the list while fast and fast->next are not NULL.  
+3️⃣ Move slow by one node and fast by two nodes in each iteration.  
+4️⃣ When fast reaches the end of the list, slow will be at the middle.  
+5️⃣ Return the node pointed to by slow.  
+
+⏱ Time Complexity: O(n)  
+📦 Space Complexity: O(1) (no extra memory used)  
+✨ Key Insight:  
+The fast & slow pointer technique is a powerful pattern for linked list problems—
+simple, elegant, and extremely efficient.
+
+<img width="1920" height="1080" alt="Screenshot 2026-01-29 122214" src="https://github.com/user-attachments/assets/0b671ee5-7b84-4ed7-aec4-da00ef00e71e" />
