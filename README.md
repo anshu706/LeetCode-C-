@@ -543,3 +543,32 @@ The fast & slow pointer technique is a powerful pattern for linked list problems
 simple, elegant, and extremely efficient.
 
 <img width="1920" height="1080" alt="Screenshot 2026-01-29 122214" src="https://github.com/user-attachments/assets/0b671ee5-7b84-4ed7-aec4-da00ef00e71e" />
+
+
+Question: 739 – Daily Temperatures  
+
+💻 Approach:  
+We’re given a list of daily temperatures.  
+For each day, we need to find how many days ahead a warmer temperature occurs.  
+If no warmer day exists, the answer is 0.  
+To solve this efficiently, we use a Monotonic Stack.  
+
+1️⃣ Create an answer array initialized with 0.  
+2️⃣ Use a stack to store indices of days (not temperatures).  
+3️⃣ Traverse the array from left to right.  
+4️⃣ While the stack isn’t empty and the current temperature is greater than the temperature at the stack’s top index:  
+    • Pop the index  
+    • Set answer[index] = current_day - index  
+5️⃣ Push the current index onto the stack.  
+6️⃣ Any index left in the stack has no warmer future day → remains 0.  
+
+
+⏱ Time Complexity: O(n)  
+(each index is pushed and popped at most once)  
+📦 Space Complexity: O(n)    
+(for the stack and answer array)       
+✨ Key Insight:
+This problem looks like brute force at first, but recognizing the “next greater element” pattern turns it into a clean linear-time solution.  
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/905d8cf2-abb9-40ea-ae1a-b2a812d4e0d9" />
+
