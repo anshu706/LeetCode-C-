@@ -572,3 +572,24 @@ This problem looks like brute force at first, but recognizing the “next greate
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/905d8cf2-abb9-40ea-ae1a-b2a812d4e0d9" />
 
+Question: 509 – Fibonacci Number  
+
+💻 Approach:  
+We are given a number n and asked to compute the n-th Fibonacci number, where each number is the sum of the previous two.  
+
+1️⃣ If n = 0, return 0 (base case).  
+2️⃣ If n = 1, return 1 (base case).  
+3️⃣ For n > 1, recursively calculate  
+    F(n) = F(n−1) + F(n−2).  
+4️⃣ The recursion continues until it reaches the base cases.  
+5️⃣ The final result bubbles up through the recursive calls.  
+
+⏱ Time Complexity: O(2^n)   
+(Due to repeated calculations in naive recursion)  
+📦 Space Complexity: O(n)  
+(Recursive call stack)  
+✨ Key Insight:  
+While recursion makes the logic very clean and intuitive, it is not the most efficient approach for larger values of n.  
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/31e11884-d49c-42d3-84ca-82fa2766b6a5" />
+
