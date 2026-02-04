@@ -617,3 +617,23 @@ Using frequency counting avoids sorting and extra string manipulation, making th
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/3dba25aa-f0cc-48c5-8668-da2fb972731e" />
 
 
+Question: 231 – Power of Two
+
+💻 Approach:
+We are given an integer n, and we need to determine whether it can be expressed as a power of two, i.e., n=2x for some integer xn = 2^x \quad \text{for some integer } xn=2x for some integer xTo solve this, we use a recursive divide-by-2 strategy.  
+1️⃣ If n is 0, return false (0 is not a power of two).  
+2️⃣ If n is 1, return true (since 20=12^0 = 120=1).  
+3️⃣ If n is odd, return false (all powers of two except 1 are even).  
+4️⃣ Otherwise, divide n by 2 and recursively check the result.  
+5️⃣ If the recursion eventually reaches 1, the number is a power of two.  
+
+⏱ Time Complexity:   
+O(log n) — each recursive call halves the number  
+📦 Space Complexity:  
+O(log n) — due to recursive call stack  
+✨ Key Insight:  
+Powers of two have a very strict structure—continuous divisibility by 2 with no remainder.  
+Recognizing this pattern makes the solution straightforward and reliable.  
+
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/5856f83c-2f27-4c12-be6e-9eab5b2c6d86" />
