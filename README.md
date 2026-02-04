@@ -593,3 +593,27 @@ While recursion makes the logic very clean and intuitive, it is not the most eff
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/31e11884-d49c-42d3-84ca-82fa2766b6a5" />
 
+
+Question: 389 – Find the Difference  
+
+💻 Approach:  
+We are given two strings:  
+s → original string  
+t → shuffled version of s with one extra character added  
+Our task: identify the extra character in string t.  
+1️⃣ Create a frequency array of size 26 to track lowercase letters.  
+2️⃣ Traverse string s and increment the frequency count of each character.  
+3️⃣ Traverse string t and decrement the frequency count of each character.  
+4️⃣ The character whose frequency is non-zero after both traversals is the extra letter.  
+5️⃣ Convert its index back to the corresponding character and return it.  
+  
+⏱ Time Complexity: O(n)  
+(Single pass over both strings)  
+📦 Space Complexity: O(1)    
+(Fixed-size array of 26 characters)    
+✨ Key Insight:  
+Using frequency counting avoids sorting and extra string manipulation, making the solution efficient and elegant.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/3dba25aa-f0cc-48c5-8668-da2fb972731e" />
+
+
