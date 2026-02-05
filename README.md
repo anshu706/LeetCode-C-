@@ -637,3 +637,29 @@ Recognizing this pattern makes the solution straightforward and reliable.
 
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/5856f83c-2f27-4c12-be6e-9eab5b2c6d86" />
+
+
+
+Question: 326 – Power of Three  
+
+
+💻 Approach:  
+We are given an integer n.  
+Our task: determine whether n can be expressed as a power of 3, i.e.,n = 3^x for some integer x.  
+1️⃣ If n is 0, return false immediately since no power of 3 equals 0.  
+2️⃣ If n is 1, return true because 3^0 = 1.  
+3️⃣ If n is not divisible by 3, it cannot be a power of 3 → return false.  
+4️⃣ Otherwise, divide n by 3 and repeat the process recursively.  
+5️⃣ If we eventually reach 1, then the number is a power of 3.  
+
+⏱ Time Complexity: O(log₃ n)  
+(We divide the number by 3 at every step)  
+
+📦 Space Complexity: O(log₃ n)  
+(Due to recursive function calls)  
+
+✨ Key Insight:  
+The problem isn’t about multiplication—it’s about reversing the process using division and checking consistency at each step.  
+
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/4e3f3fdc-8935-43d8-b920-6eb855c3aab8" />
