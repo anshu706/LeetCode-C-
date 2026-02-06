@@ -663,3 +663,24 @@ The problem isn’t about multiplication—it’s about reversing the process us
 
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/4e3f3fdc-8935-43d8-b920-6eb855c3aab8" />
+
+
+Question: 342 – Power of Four  
+
+💻 Approach:  
+We are given an integer n, and our task is to determine whether it can be expressed as a power of 4.  
+A number is a power of four if it can be repeatedly divided by 4 until it becomes exactly 1 — without leaving a remainder at any step.  
+1️⃣ If n is 0, it can never be a power of four → return false.  
+2️⃣ If n is 1, it is already 4⁰ → return true.  
+3️⃣ If n % 4 != 0, the number cannot be divided cleanly by 4 → return false.  
+4️⃣ Otherwise, recursively check the same condition for n / 4.  
+5️⃣ If the recursion eventually reaches 1, the number is a power of four.  
+
+⏱ Time Complexity: O(log₄ n)  
+(We divide the number by 4 at every recursive step)  
+📦 Space Complexity: O(log₄ n)  
+(Recursive call stack)  
+✨ Key Insight:  
+Not every power of two is a power of four — checking divisibility by 4 repeatedly filters out the false positives.  
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d80c7a6c-8170-4296-91a7-db4d18de6652" />
