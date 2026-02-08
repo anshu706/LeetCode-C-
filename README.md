@@ -1,4 +1,4 @@
-![1770539874260](https://github.com/user-attachments/assets/d3292575-6d16-4c9b-8ad0-6317d7aa92de)Question: 1 - Two Sum 
+Question: 1 - Two Sum 
 
 💻 Approach:
  We are given an array nums and a target value.
