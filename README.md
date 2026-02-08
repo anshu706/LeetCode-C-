@@ -709,3 +709,44 @@ Two trees aren’t the same just because they contain the same values —
 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4bd47714-cf27-4159-929a-9a3646cd8d99" />
+
+Question: 101 – Symmetric Tree
+
+💻 Approach:
+
+We are given the root of a binary tree.
+Our task is to check whether the tree is symmetric, i.e., it is a mirror of itself around the center.
+
+To solve this, we compare the left and right subtrees recursively.
+
+1️⃣ Create a helper function isMirror(a, b) that checks whether two trees are mirror images.
+
+2️⃣ If both nodes are NULL, they are symmetric → return true.
+
+3️⃣ If only one node is NULL, symmetry breaks → return false.
+
+4️⃣ If the values of both nodes are different, return false.
+
+5️⃣ Recursively compare:
+
+left child of a with right child of b
+
+right child of a with left child of b
+
+6️⃣ The tree is symmetric if isMirror(root->left, root->right) returns true.
+
+
+
+⏱ Time Complexity: O(n)
+(Each node is visited once)
+
+📦 Space Complexity: O(h)
+(Recursive stack space, where h is the height of the tree)
+
+✨ Key Insight:
+
+Symmetry in trees isn’t about identical traversal—it’s about mirrored structure and values.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b05dadd-25ad-4b1f-a454-91e36d13a17c" />
+
+
