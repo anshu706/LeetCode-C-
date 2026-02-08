@@ -684,3 +684,28 @@ A number is a power of four if it can be repeatedly divided by 4 until it become
 Not every power of two is a power of four — checking divisibility by 4 repeatedly filters out the false positives.  
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d80c7a6c-8170-4296-91a7-db4d18de6652" />
+
+Question: 100 – Same Tree  
+
+💻 Approach:  
+We are given the roots of two binary trees p and q.  
+Our task: determine whether both trees are structurally identical and contain the same node values.   
+To solve this, we use recursive tree traversal.  
+1️⃣ If both nodes are NULL, they are identical → return true.  
+2️⃣ If one node is NULL and the other is not, structures differ → return false.  
+3️⃣ If node values are different, trees are not the same → return false.  
+4️⃣ Recursively compare the left subtrees and right subtrees of both trees.  
+5️⃣ If all checks pass, return true.  
+
+
+⏱ Time Complexity: O(n)  
+(each node is visited once)  
+📦 Space Complexity: O(h)  
+(recursion stack, where h is the height of the tree)  
+
+✨ Key Insight:  
+Two trees aren’t the same just because they contain the same values —  
+👉 structure matters just as much as data.  
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4bd47714-cf27-4159-929a-9a3646cd8d99" />
