@@ -749,4 +749,51 @@ Symmetry in trees isn’t about identical traversal—it’s about mirrored stru
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3b05dadd-25ad-4b1f-a454-91e36d13a17c" />
 
+Question: 701 – Insert into a Binary Search Tree
 
+💻 Approach:
+
+We are given the root of a Binary Search Tree (BST) and a value val that does not already exist in the tree.
+Our task is to insert this value into the BST while preserving BST properties and return the root.
+
+👉 Key BST rule:
+
+Left subtree values < root
+
+Right subtree values > root
+
+🔎 Step-by-step Logic:
+
+1️⃣ Base Case:
+If the current root is NULL, we’ve found the correct position → create and return a new node with val.
+
+2️⃣ Compare Values:
+
+If val < root->val, recursively insert into the left subtree.
+
+Otherwise, recursively insert into the right subtree.
+
+3️⃣ Link the subtree back:
+After insertion, return the current root to maintain the tree structure.
+
+4️⃣ Final Output:
+The root of the updated BST is returned.
+
+⏱ Time Complexity:
+
+O(h), where h is the height of the tree
+
+Best case (balanced BST): O(log n)
+
+Worst case (skewed BST): O(n)
+
+📦 Space Complexity:
+
+O(h) due to recursive call stack
+
+✨ Key Insight:
+
+Insertion in a BST is less about where you start and more about when you stop.
+The moment you hit NULL, you’ve found the perfect spot.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/692e6732-c4ce-44f0-baaf-33f01aa5bdb5" />
