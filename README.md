@@ -797,3 +797,42 @@ Insertion in a BST is less about where you start and more about when you stop.
 The moment you hit NULL, you’ve found the perfect spot.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/692e6732-c4ce-44f0-baaf-33f01aa5bdb5" />
+
+
+Question: 230 – Kth Smallest Element in a BST
+
+💻 Approach:
+
+We are given the root of a Binary Search Tree (BST) and an integer k.
+Our task: find the k-th smallest element (1-indexed).
+
+🔑 Key Observation:
+An inorder traversal of a BST gives nodes in sorted order.
+
+So if we traverse the tree in inorder and count nodes, the k-th visited node is our answer.
+
+🛠 Step-by-step strategy (Iterative Inorder using Stack):
+
+1️⃣ Initialize an empty stack to simulate recursion.
+
+2️⃣ Traverse left as far as possible, pushing each node onto the stack.
+
+3️⃣ When no left child exists, pop the top node from the stack.
+
+4️⃣ Decrement k (we’ve visited one node in sorted order).
+
+5️⃣ If k == 0, return the current node’s value — that’s the answer 🎯
+
+6️⃣ Move to the right subtree and repeat the process.
+
+This continues until the k-th smallest element is found.
+
+⏱ Time Complexity: O(n) (in worst case, visiting all nodes)
+
+📦 Space Complexity: O(h), where h is the height of the tree (stack space)
+
+✨ Key Insight:
+
+You don’t need to store the full inorder traversal — stop as soon as k hits zero. Early termination makes the solution efficient and clean.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/78f374e6-f397-4dc1-90a6-c5673bf4498e" />
