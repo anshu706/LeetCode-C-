@@ -836,3 +836,46 @@ This continues until the k-th smallest element is found.
 You don’t need to store the full inorder traversal — stop as soon as k hits zero. Early termination makes the solution efficient and clean.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/78f374e6-f397-4dc1-90a6-c5673bf4498e" />
+
+
+Question: 144 – Binary Tree Preorder Traversal
+
+💻 Approach:
+
+We are given the root of a binary tree.
+
+Our task: return the preorder traversal of its nodes' values.
+
+Preorder follows the order:
+
+👉 Root → Left → Right
+
+1️⃣ If the current node is nullptr, return immediately (base case).
+
+2️⃣ First, add the current node’s value to the result vector.
+
+3️⃣ Recursively traverse the left subtree.
+
+4️⃣ Recursively traverse the right subtree.
+
+5️⃣ Return the final result vector after traversal completes.
+
+This is implemented using a helper dfs() function that performs the recursive traversal.
+
+
+⏱ Time Complexity: O(n)
+Every node is visited exactly once.
+
+📦 Space Complexity: O(h)
+Where h is the height of the tree (recursive call stack).
+Worst case: O(n) for a skewed tree.
+Best case: O(log n) for a balanced tree.
+
+✨ Key Insight:
+
+Tree traversal problems become much easier once you clearly remember the traversal order.
+For preorder, always think:
+
+“Process first, then explore.”
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d3e95e05-93a3-434f-afd5-3c58cc6dc9c5" />
