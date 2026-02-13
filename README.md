@@ -922,3 +922,38 @@ Half the battle is already won.
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/5ad2240e-cc08-473b-807b-c0d3439c94e6" />
 
 
+Question: 145 – Binary Tree Postorder Traversal
+
+💻 Approach:
+
+We are given the root of a binary tree.
+
+Our task: return the postorder traversal of its nodes’ values.
+
+👉 Postorder traversal follows the order:
+Left → Right → Root
+
+1️⃣ If the current node is NULL, simply return (base condition).
+
+2️⃣ Recursively traverse the left subtree.
+
+3️⃣ Recursively traverse the right subtree.
+
+4️⃣ Finally, add the current node’s value to the result vector.
+
+5️⃣ Return the result after completing traversal of the entire tree.
+
+We use a helper dfs() function to perform recursion and build the result list.
+
+⏱ Time Complexity: O(n)
+Each node is visited exactly once.
+
+📦 Space Complexity: O(n)
+In the worst case (skewed tree), recursion stack can go up to height n.
+
+✨ Key Insight:
+
+The order of operations in recursion matters.
+Placing res.push_back(root->val) at the end ensures true postorder behavior.
+
+<img width="1920" height="1080" alt="Screenshot 2026-01-29 105810" src="https://github.com/user-attachments/assets/2dae1b22-ed9c-4dae-85ca-d315cb069728" />
