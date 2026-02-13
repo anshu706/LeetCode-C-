@@ -10,7 +10,7 @@ public:
         res.push_back(root->val);
         inorder(root->right, res);
     }
- 
+
     vector<int> inorderTraversal(TreeNode *root)
     {
         vector<int> res;
