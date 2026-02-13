@@ -879,3 +879,46 @@ For preorder, always think:
 “Process first, then explore.”
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d3e95e05-93a3-434f-afd5-3c58cc6dc9c5" />
+
+
+Question: 94 – Binary Tree Inorder Traversal
+
+💻 Approach:
+
+We are given the root of a binary tree.
+
+Our task: return the inorder traversal of its nodes’ values.
+
+👉 Inorder traversal follows the sequence:
+Left ➝ Root ➝ Right
+
+1️⃣ If the current node is NULL, return immediately (base case).
+
+2️⃣ Recursively traverse the left subtree.
+
+3️⃣ Store the current node’s value into the result vector.
+
+4️⃣ Recursively traverse the right subtree.
+
+5️⃣ Return the final result vector.
+
+⏱ Time Complexity: O(n)
+(Every node is visited exactly once.)
+
+📦 Space Complexity: O(h)
+(Recursive stack space, where h is the height of the tree. Worst case O(n), best case O(log n) for balanced trees.)
+
+✨ Key Insight:
+
+Tree problems become much simpler when you clearly understand traversal order patterns.
+
+Once you remember:
+🔹 Preorder → Root–Left–Right
+🔹 Inorder → Left–Root–Right
+🔹 Postorder → Left–Right–Root
+
+Half the battle is already won.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/5ad2240e-cc08-473b-807b-c0d3439c94e6" />
+
+
