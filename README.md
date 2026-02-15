@@ -929,17 +929,58 @@ Placing res.push_back(root->val) at the end ensures true postorder behavior.
 
 <img width="1920" height="1080" alt="Screenshot 2026-01-29 105810" src="https://github.com/user-attachments/assets/2dae1b22-ed9c-4dae-85ca-d315cb069728" />
 
-<<<<<<< HEAD
-Question: 98 – Validate Binary Search Tree
-=======
 Question: 102 – Binary Tree Level Order Traversal
->>>>>>> f725f3fa202298ada9b375da993fc4e9c02963ad
 
 💻 Approach:
 
 We are given the root of a binary tree.
 
-<<<<<<< HEAD
+Our task: return the level order traversal of its nodes’ values (left to right, level by level).
+
+1️⃣ If the root is nullptr, return an empty result immediately (edge case handling).
+
+2️⃣ Use a Queue (FIFO) data structure to perform Breadth-First Search (BFS).
+
+3️⃣ Push the root node into the queue.
+
+4️⃣ While the queue is not empty:
+
+Store the current queue size (this represents the number of nodes at the current level).
+
+Create a temporary vector to store this level’s values.
+
+5️⃣ Process exactly size nodes:
+
+Pop the front node from the queue.
+
+Add its value to the current level vector.
+
+Push its left child (if exists).
+
+Push its right child (if exists).
+
+6️⃣ After processing all nodes of that level, push the level vector into the final result.
+
+7️⃣ Repeat until the queue becomes empty.
+
+8️⃣ Return the final 2D vector.
+
+
+⏱ Time Complexity: O(n)
+Each node is visited exactly once.
+
+📦 Space Complexity: O(n)
+Queue stores at most one full level of nodes at a time.
+
+
+<img width="1920" height="1080" alt="Screenshot 2026-01-29 104806" src="https://github.com/user-attachments/assets/0da1ad27-3618-4a19-a204-1a99d8f1c5d8" />
+
+Question: 98 – Validate Binary Search Tree
+
+💻 Approach:
+
+We are given the root of a binary tree.
+
 Our task: determine whether it satisfies the properties of a valid Binary Search Tree (BST).
 
 A valid BST must follow:
@@ -977,49 +1018,6 @@ Right subtree with updated range (current node value, maxVal)
 
 The real trick isn’t comparing left and right —
 it’s carrying the correct boundaries down the recursion.
-=======
-Our task: return the level order traversal of its nodes’ values (left to right, level by level).
 
-1️⃣ If the root is nullptr, return an empty result immediately (edge case handling).
+<img width="1920" height="1080" alt="Screenshot 2026-01-29 103443" src="https://github.com/user-attachments/assets/fec6353a-1e02-4315-8b07-d535d68bc504" />
 
-2️⃣ Use a Queue (FIFO) data structure to perform Breadth-First Search (BFS).
-
-3️⃣ Push the root node into the queue.
-
-4️⃣ While the queue is not empty:
-
-Store the current queue size (this represents the number of nodes at the current level).
-
-Create a temporary vector to store this level’s values.
-
-5️⃣ Process exactly size nodes:
-
-Pop the front node from the queue.
-
-Add its value to the current level vector.
-
-Push its left child (if exists).
-
-Push its right child (if exists).
-
-6️⃣ After processing all nodes of that level, push the level vector into the final result.
-
-7️⃣ Repeat until the queue becomes empty.
-
-8️⃣ Return the final 2D vector.
-
-⏱ Time Complexity: O(n)
-Each node is visited exactly once.
-
-📦 Space Complexity: O(n)
-Queue stores at most one full level of nodes at a time.
-
-✨ Key Insight:
-
-The trick is recognizing that Level Order Traversal = BFS.
-Tracking the queue size is what cleanly separates each level.
-
-<img width="1920" height="1080" alt="Screenshot 2026-01-29 104806" src="https://github.com/user-attachments/assets/dbe37f73-5712-4caa-b6b7-72b4bd2496e4" />
-
-
->>>>>>> f725f3fa202298ada9b375da993fc4e9c02963ad
