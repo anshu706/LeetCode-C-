@@ -972,5 +972,3 @@ Right subtree with updated range (current node value, maxVal)
 
 The real trick isn’t comparing left and right —
 it’s carrying the correct boundaries down the recursion.
-
-![alt text](<Screenshot 2026-01-29 103443.png>)
