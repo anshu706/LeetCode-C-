@@ -1,139 +1,134 @@
-Question: 1 - Two Sum 
+Question: 1 - Two Sum
 
 💻 Approach:
- We are given an array nums and a target value.
- Our task: find indices of two numbers such that they add up to the target.   
- 
+We are given an array nums and a target value.
+Our task: find indices of two numbers such that they add up to the target.
+
 1️⃣ Traverse the array once while keeping track of seen elements.  
  2️⃣ For each number x, compute its complement: target - x.  
  3️⃣ If the complement already exists in a hash map, we’ve found the solution.  
- 4️⃣ Otherwise, store the current number with its index for future lookups.  
+ 4️⃣ Otherwise, store the current number with its index for future lookups.
 
 ⏱ Time Complexity: O(n)  
  📦 Space Complexity: O(n)  
 ✨ Key Insight:
- Trading extra space for time using a hash map transforms a brute-force O(n²) solution into an optimal O(n) approach.
+Trading extra space for time using a hash map transforms a brute-force O(n²) solution into an optimal O(n) approach.
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7b72397e-2d2e-4e43-83ed-3d945dab57f9" />
 
-Question: 7 – Reverse Integer  
+Question: 7 – Reverse Integer
 
 💻 Approach:
- We are given a signed 32-bit integer x.
- Our task: reverse its digits while ensuring the result stays within the valid 32-bit signed integer range [−231,231−1][-2³¹, 2³¹ − 1][−231,231−1].  
- 
+We are given a signed 32-bit integer x.
+Our task: reverse its digits while ensuring the result stays within the valid 32-bit signed integer range [−231,231−1][-2³¹, 2³¹ − 1][−231,231−1].
+
 1️⃣ Extract the last digit using modulo (x % 10).  
  2️⃣ Remove the digit from x using integer division (x / 10).  
  3️⃣ Before appending the digit, check for overflow or underflow conditions.  
- 4️⃣ If reversing exceeds the allowed range, return 0; otherwise, build the reversed number incrementally.  
+ 4️⃣ If reversing exceeds the allowed range, return 0; otherwise, build the reversed number incrementally.
 
-
- ⏱ Time Complexity: O(log₁₀ n)  
+⏱ Time Complexity: O(log₁₀ n)  
  📦 Space Complexity: O(1)  
 ✨ Key Insight:
- Careful boundary checks are crucial—integer overflow is a logical pitfall, not just a language limitation.
+Careful boundary checks are crucial—integer overflow is a logical pitfall, not just a language limitation.
 
  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/32d98142-727a-4eb6-9c76-db52922000db" />
-
 
 Question: 206 – Reverse Linked List
 
 💻 Approach:
- We are given the head of a singly linked list.
- Our task: Reverse the list and return the new head.
- 
+We are given the head of a singly linked list.
+Our task: Reverse the list and return the new head.
+
 1️⃣ Initialize two pointers: prev as NULL and curr pointing to head.  
  2️⃣ Traverse the list while keeping track of the next node.  
  3️⃣ Reverse the next pointer of the current node to point to prev.  
  4️⃣ Move prev and curr one step forward.  
- 5️⃣ Once traversal ends, prev becomes the new head of the reversed list.  
+ 5️⃣ Once traversal ends, prev becomes the new head of the reversed list.
 
 ⏱ Time Complexity: O(n)  
  📦 Space Complexity: O(1)  
 ✨ Key Insight:
- Pointer manipulation is powerful—once you control references, you control the structure.
+Pointer manipulation is powerful—once you control references, you control the structure.
 
  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/13c26024-5370-4c4b-b5c7-649462281d38" />
-
 
 Question: 9 – Palindrome Number
 
 💻 Approach:
- We are given an integer x.
- Our task: determine whether x is a palindrome—i.e., it reads the same forward and backward.
- 
+We are given an integer x.
+Our task: determine whether x is a palindrome—i.e., it reads the same forward and backward.
+
 1️⃣ Immediately return false for negative numbers and numbers ending with 0 (except 0 itself).  
  2️⃣ Reverse only half of the number instead of the entire integer.  
  3️⃣ Compare the remaining half with the reversed half.  
- 4️⃣ For odd-length numbers, ignore the middle digit during comparison.  
+ 4️⃣ For odd-length numbers, ignore the middle digit during comparison.
 
- ⏱ Time Complexity: O(log₁₀ n)  
+⏱ Time Complexity: O(log₁₀ n)  
  📦 Space Complexity: O(1)  
 ✨ Key Insight:
- You don’t always need to process the entire input—sometimes half is enough.  
+You don’t always need to process the entire input—sometimes half is enough.
 
  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/269d8a83-8b6e-48fe-b6aa-fee62dadabe3" />
 
-
 Question: 125 – Valid Palindrome
 💻 Approach:
- We are given a string s.
- Our task: determine whether it is a palindrome after converting all letters to lowercase and removing all non-alphanumeric characters.
- 
+We are given a string s.
+Our task: determine whether it is a palindrome after converting all letters to lowercase and removing all non-alphanumeric characters.
+
 1️⃣ Initialize two pointers: one at the start (left) and one at the end (right).  
  2️⃣ Skip non-alphanumeric characters from both ends.  
  3️⃣ Compare characters case-insensitively using tolower.  
  4️⃣ If any mismatch occurs, return false.  
- 5️⃣ If all valid characters match, return true.  
+ 5️⃣ If all valid characters match, return true.
 
- ⏱ Time Complexity: O(n)  
+⏱ Time Complexity: O(n)  
  📦 Space Complexity: O(1)  
 ✨ Key Insight:
- Preprocessing isn’t always necessary—smart pointer movement can handle validation on the fly.
+Preprocessing isn’t always necessary—smart pointer movement can handle validation on the fly.
 
  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e6d37dd-fbdd-4c52-b7c4-7303aefb8a80" />
 
 Question: 169 – Majority Element
 
 💻 Approach:
- We are given an array nums of size n.
- Our task: find the element that appears more than ⌊n / 2⌋ times (guaranteed to exist).
+We are given an array nums of size n.
+Our task: find the element that appears more than ⌊n / 2⌋ times (guaranteed to exist).
 
 1️⃣ Initialize a candidate element and a counter.  
  2️⃣ Traverse the array:  
  • If the current element matches the candidate, increment the count.  
  • Otherwise, decrement the count.  
  3️⃣ When the count reaches zero, update the candidate to the current element and reset the count.  
- 4️⃣ After traversal, the remaining candidate is the majority element.  
+ 4️⃣ After traversal, the remaining candidate is the majority element.
 
- ⏱ Time Complexity: O(n)  
+⏱ Time Complexity: O(n)  
  📦 Space Complexity: O(1)  
 ✨ Key Insight:
- You don’t need frequency maps when a majority is guaranteed—pair cancellation is enough.  
- 
+You don’t need frequency maps when a majority is guaranteed—pair cancellation is enough.
+
  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/48750ad1-1452-4770-a5a2-7bc9cfb20ec2" />
 
 Question: 70 – Climbing Stairs
 
 💻 Approach:
 We are given an integer n, representing the number of steps to reach the top.
- Each time, we can climb either 1 step or 2 steps.
- Our task: compute the total number of distinct ways to reach the top.
+Each time, we can climb either 1 step or 2 steps.
+Our task: compute the total number of distinct ways to reach the top.
 
 1️⃣ Use Dynamic Programming to break the problem into subproblems.  
  2️⃣ Let dp[i] represent the number of ways to reach step i.  
  3️⃣ Base cases:  
  • dp[0] = 1 (one way to stay at the ground)  
- • dp[1] = 1   
+ • dp[1] = 1  
  4️⃣ Recurrence relation:
- dp[n] = dp[n-1] + dp[n-2]  
- 5️⃣ Use memoization to avoid redundant calculations.  
+dp[n] = dp[n-1] + dp[n-2]  
+ 5️⃣ Use memoization to avoid redundant calculations.
 
- ⏱ Time Complexity: O(n)  
+⏱ Time Complexity: O(n)  
  📦 Space Complexity: O(n)  
 ✨ Key Insight:
-Problems that look recursive often hide an optimal dynamic programming solution when overlapping subproblems exist.  
-
+Problems that look recursive often hide an optimal dynamic programming solution when overlapping subproblems exist.
 
 <img width="800" height="449" alt="image" src="https://github.com/user-attachments/assets/6226bc85-d4af-4ddd-adb9-47c1330bc940" />
 
@@ -146,7 +141,7 @@ Our task: reverse the string in-place using O(1) extra memory.
 1️⃣ Initialize two pointers: one at the start (left) and one at the end (right).  
 2️⃣ Swap the characters at left and right.  
 3️⃣ Move left forward and right backward.  
-4️⃣ Repeat until both pointers meet.  
+4️⃣ Repeat until both pointers meet.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1)  
@@ -161,7 +156,7 @@ Question: 136 – Single Number
 We are given an array where every element appears twice except one.  
  The goal is to find that unique element in linear time and constant space.  
 🔑 Key Insight:
- Using the XOR (^) operator
+Using the XOR (^) operator
 a ^ a = 0 → duplicate elements cancel out
 a ^ 0 = a → the unique element remains
 By XOR-ing all elements together, all pairs vanish, leaving only the single number.
@@ -170,7 +165,7 @@ This allows us to solve the problem in one pass without extra memory.
 ⏱ Time Complexity: O(n)  
  📦 Space Complexity: O(1)  
 💡 DSA Lesson Reinforced:
- Sometimes the most optimal solution isn’t about data structures—it’s about understanding bitwise properties.
+Sometimes the most optimal solution isn’t about data structures—it’s about understanding bitwise properties.
 
  <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/086ff97b-2be3-4007-8292-466d247f4455" />
 
@@ -181,50 +176,49 @@ Our task: determine whether any element appears at least twice in the array.
 1️⃣ Sort the array to bring duplicate values next to each other.  
 2️⃣ Traverse the array and compare each element with the next one.  
 3️⃣ If any adjacent elements are equal, return true.  
-4️⃣ If no duplicates are found after traversal, return false.  
-  
+4️⃣ If no duplicates are found after traversal, return false.
+
 ⏱ Time Complexity: O(n log n) (due to sorting)  
 📦 Space Complexity: O(1) (in-place sort, ignoring input modification)  
 ✨ Key Insight:
-Sometimes a simple preprocessing step like sorting can significantly simplify the problem logic.  
+Sometimes a simple preprocessing step like sorting can significantly simplify the problem logic.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/034624e5-5b85-4f19-920c-572c39275218" />
 
 Question: 66 – Plus One  
-💻 Approach: 
+💻 Approach:
 We are given a large integer represented as an array of digits.
 Our task: increment the number by one and return the resulting digit array.  
 1️⃣ Start traversing the digits from the last index (least significant digit).  
 2️⃣ If the current digit is less than 9, increment it and return the array.  
 3️⃣ If the digit is 9, set it to 0 and continue moving left (carry propagation).  
 4️⃣ If all digits become 0, insert 1 at the beginning of the array.  
-5️⃣ Return the final updated digits.  
+5️⃣ Return the final updated digits.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1) (in-place modification, excluding output)  
 ✨ Key Insight:
-Handling carry correctly is the core challenge—once mastered, the solution becomes very intuitive.  
+Handling carry correctly is the core challenge—once mastered, the solution becomes very intuitive.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9eb95ded-d1b4-45b2-b71b-a7a2f06205b4" />
 
 Question: 13 – Roman to Integer  
 💻 Approach:
 We are given a Roman numeral string and need to convert it into its integer value.  
-Key idea: 
- Roman numerals are usually written from larger to smaller values, except when subtraction is involved (like IV, IX, CM).  
+Key idea:
+Roman numerals are usually written from larger to smaller values, except when subtraction is involved (like IV, IX, CM).  
 1️⃣ Map each Roman symbol to its integer value.  
  2️⃣ Traverse the string from left to right.  
  3️⃣ If the current symbol is smaller than the next one, subtract it.  
  4️⃣ Otherwise, add it to the result.  
- 5️⃣ Return the accumulated sum.  
+ 5️⃣ Return the accumulated sum.
 
- ⏱ Time Complexity: O(n)  
+⏱ Time Complexity: O(n)  
  📦 Space Complexity: O(1)  
 ✨ Key Insight:
- The trick isn’t memorizing Roman rules—it’s recognizing that relative order matters more than absolute values.
- 
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/f5961a6f-9caf-40ab-9b64-6bcf04f1c200" />
+The trick isn’t memorizing Roman rules—it’s recognizing that relative order matters more than absolute values.
 
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/f5961a6f-9caf-40ab-9b64-6bcf04f1c200" />
 
 🔪 Problem No: 53 – Maximum Subarray
 💻 Approach:
@@ -232,13 +226,13 @@ We are given an integer array nums.
 Our task is to find the contiguous subarray with the largest sum and return that sum.
 
 1️⃣ Initialize two variables:
- • currSum to track the current subarray sum  
+• currSum to track the current subarray sum  
  • maxSum to store the maximum sum seen so far  
 2️⃣ Traverse the array element by element.  
 3️⃣ Add the current value to currSum.  
 4️⃣ Update maxSum with the maximum of currSum and maxSum.  
 5️⃣ If currSum becomes negative, reset it to 0 (it won’t help future subarrays).  
-6️⃣ After traversing the array, return maxSum.  
+6️⃣ After traversing the array, return maxSum.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1)  
@@ -257,7 +251,7 @@ Our task: find the maximum depth, i.e., the number of nodes on the longest path 
 2️⃣ Recursively compute the depth of the left subtree.  
 3️⃣ Recursively compute the depth of the right subtree.  
 4️⃣ Take the maximum of left and right depths and add 1 for the current node.  
-5️⃣ Return the final depth.  
+5️⃣ Return the final depth.
 
 ⏱ Time Complexity: O(n)  
  (each node is visited exactly once)  
@@ -276,19 +270,19 @@ Our task is to find the diameter of the tree, defined as the length (number of e
 This path may or may not pass through the root.  
 1️⃣ Use Depth-First Search (DFS) to compute the height of each subtree.  
 2️⃣ At every node, calculate the possible diameter passing through that node as:
- left subtree height + right subtree height.  
+left subtree height + right subtree height.  
 3️⃣ Maintain a variable to track the maximum diameter found so far.  
 4️⃣ Return the height of the current node as:
- 1 + max(left height, right height) to support parent calculations.  
-5️⃣ After traversing the entire tree, return the stored maximum diameter.  
+1 + max(left height, right height) to support parent calculations.  
+5️⃣ After traversing the entire tree, return the stored maximum diameter.
 
 ⏱ Time Complexity: O(n) — each node is visited once.  
 📦 Space Complexity: O(h) — recursion stack, where h is the height of the tree
- (O(n) in the worst case of a skewed tree).  
+(O(n) in the worst case of a skewed tree).  
 ✨ Key Insight:
 The diameter of a binary tree is not the same as its height.  
- It’s about combining heights from both sides at every node.  
- 
+ It’s about combining heights from both sides at every node.
+
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d02e0172-f899-4fcc-a3fd-de6fa9348cfb" />
 
 Question: 50 – Pow(x, n)
@@ -308,7 +302,7 @@ Convert the problem to (1/x)−n(1/x)^{-n}(1/x)−n.
 If n is odd, multiply ans by x.  
 Square x.  
 Divide n by 2.  
-6️⃣ Return ans as the final result.  
+6️⃣ Return ans as the final result.
 
 ⏱ Time Complexity: O(log n)  
 📦 Space Complexity: O(1)  
@@ -326,7 +320,7 @@ Our goal is to maximize profit by buying once and selling once in the future.
 1️⃣ Initialize bestBuy as the price on day 0 (minimum price seen so far).  
 2️⃣ Initialize maxProfit as 0.  
 3️⃣ Traverse the array from day 1 onwards.  
-4️⃣ For each day:    
+4️⃣ For each day:  
 Calculate the profit if we sell today (current price - bestBuy).  
 Update maxProfit if this profit is higher.  
 Update bestBuy if today’s price is lower than the previous best.  
@@ -334,7 +328,7 @@ Update bestBuy if today’s price is lower than the previous best.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1)  
-✨ Key Insight: 
+✨ Key Insight:
 The real trick isn’t finding the maximum difference—it’s tracking the minimum price before the current day.
 Once that clicks, the solution becomes straightforward.
 
@@ -352,21 +346,20 @@ fast moves two steps at a time
 2️⃣ Traverse the list while fast and fast->next are not NULL.  
 3️⃣ Move slow by one node and fast by two nodes.  
 4️⃣ If at any point slow == fast, a cycle exists → return true.  
-5️⃣ If traversal ends without collision, no cycle exists → return false.  
+5️⃣ If traversal ends without collision, no cycle exists → return false.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1) (no extra memory used)  
 ✨ Key Insight:
-Detecting cycles doesn’t require extra data structures—smart pointer movement is enough.  
+Detecting cycles doesn’t require extra data structures—smart pointer movement is enough.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed3677ea-f05e-4248-8f92-cc0d2a5f11ba" />
-
 
 Question: 142 – Linked List Cycle II
 💻 Approach:
 We are given the head of a linked list and need to find the node where a cycle begins.  
- If no cycle exists, return null. 
- 
+ If no cycle exists, return null.
+
 🔍 Strategy Used: Floyd’s Cycle Detection Algorithm (Tortoise & Hare)  
 1️⃣ Initialize two pointers:  
 Slow (s) → moves one step at a time  
@@ -377,7 +370,7 @@ If fast and slow meet, a cycle is confirmed.
 Create a new pointer start at head.  
 Move start and slow one step at a time.  
 The node where they meet is the cycle entry point.  
-4️⃣ If fast reaches NULL, there is no cycle.  
+4️⃣ If fast reaches NULL, there is no cycle.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1) (no extra data structures used)  
@@ -390,13 +383,13 @@ Question: 226 – Invert Binary Tree
 💻 Approach:  
 We are given the root of a binary tree.  
 Our task is to invert the tree — that is, swap the left and right children of every node.  
-We use recursion to solve this efficiently.  
+We use recursion to solve this efficiently.
 
 1️⃣ If the current node is NULL, return NULL (base case).  
 2️⃣ Recursively invert the left subtree.  
 3️⃣ Recursively invert the right subtree.  
 4️⃣ Swap the left and right child pointers of the current node.  
-5️⃣ Return the root after inversion.  
+5️⃣ Return the root after inversion.
 
 ⏱ Time Complexity: O(n)  
 (Each node is visited exactly once)  
@@ -404,10 +397,9 @@ We use recursion to solve this efficiently.
 (Recursive call stack, where h is the height of the tree)  
 ✨ Key Insight:
 Tree problems often become simpler when you think recursively — invert subtrees first, then fix the current node.  
-This process continues until all nodes are processed.  
+This process continues until all nodes are processed.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/e3ef7baa-8267-405c-8215-87eb1e8265d9" />
-
 
 Question: 236 – Lowest Common Ancestor of a Binary Tree
 
@@ -415,8 +407,8 @@ Question: 236 – Lowest Common Ancestor of a Binary Tree
 We are given a binary tree and two nodes p and q.  
 Our task is to find their Lowest Common Ancestor (LCA) — the lowest node in the tree that has both p and q as descendants (a node can be a descendant of itself).  
 🔍 Key idea:
- We use recursive DFS to explore the tree and identify where p and q appear.
- 
+We use recursive DFS to explore the tree and identify where p and q appear.
+
 1️⃣ If the current node is NULL, return NULL.  
 2️⃣ If the current node matches p or q, return the current node.  
  (This handles cases where one node is an ancestor of the other.)  
@@ -424,7 +416,7 @@ Our task is to find their Lowest Common Ancestor (LCA) — the lowest node in th
 4️⃣ If both left and right recursive calls return non-null,  
  → the current node is the LCA.  
 5️⃣ If only one side returns a non-null node, propagate that value upward.  
-6️⃣ If both sides return NULL, return NULL.  
+6️⃣ If both sides return NULL, return NULL.
 
 ⏱ Time Complexity: O(n)  
 (Each node is visited once.)  
@@ -448,14 +440,14 @@ To solve this, we use Level Order Traversal (BFS).
 Add left and right children to the queue for the next level.  
 When processing the last node of the level, store its value (this node is visible from the right side).  
 5️⃣ Repeat until all levels are processed.  
-6️⃣ Return the collected right-side view values.  
+6️⃣ Return the collected right-side view values.
 
 ⏱ Time Complexity: O(n)  
 Each node is visited exactly once.  
 📦 Space Complexity: O(n)  
 Queue storage for level-order traversal in the worst case.  
 ✨ Key Insight:  
-This problem isn’t about “right children only”— it’s about identifying the last node at every depth level, regardless of tree shape.  
+This problem isn’t about “right children only”— it’s about identifying the last node at every depth level, regardless of tree shape.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/af5e500d-ca28-4fab-86bf-f6d8e71a4e50" />
 
@@ -472,16 +464,15 @@ c2 → second node
 4️⃣ Swap the nodes by rearranging pointers:  
 Point c1 to c2->next  
 Point c2 to c1  
-Connect temp to c2 (new head of the pair)   
+Connect temp to c2 (new head of the pair)  
 5️⃣ Move temp forward and repeat until the list ends.  
 6️⃣ Return dummy->next as the new head.  
 ⏱ Time Complexity: O(n)  
  (Each node is visited once)  
 📦 Space Complexity: O(1)  
- (Constant extra space; swaps done in-place)  
- 
-<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2c6f76c4-8416-467f-bf9f-0dcbad07be82" />
+ (Constant extra space; swaps done in-place)
 
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2c6f76c4-8416-467f-bf9f-0dcbad07be82" />
 
 Question: 2351 – First Letter to Appear Twice  
 💻 Approach:  
@@ -492,12 +483,12 @@ Instead of tracking all positions, we can solve this efficiently in one pass.
 2️⃣ Traverse the string from left to right.  
 3️⃣ For each character, increment its frequency count.  
 4️⃣ The moment any character’s count becomes 2, return that character immediately.  
-5️⃣ Since the problem guarantees at least one repeated character, this approach always succeeds.  
+5️⃣ Since the problem guarantees at least one repeated character, this approach always succeeds.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1) (fixed-size array of 26 letters)  
 ✨ Key Insight:  
-You don’t need to store indices or compare multiple characters—early exit during traversal is the smartest optimization here.  
+You don’t need to store indices or compare multiple characters—early exit during traversal is the smartest optimization here.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4eff8877-ad25-4527-9b66-4b5f845a86b1" />
 
@@ -505,22 +496,21 @@ Question: 1137 – N-th Tribonacci Number
 💻 Approach:  
 We are given an integer n and need to compute the n-th Tribonacci number, where:  
 T0 = 0, T1 = 1, T2 = 1  
-Tn = T(n−1) + T(n−2) + T(n−3) for n ≥ 3    
+Tn = T(n−1) + T(n−2) + T(n−3) for n ≥ 3  
 1️⃣ Handle base cases directly (n = 0, 1, 2) to avoid unnecessary computation.  
 2️⃣ Use an array arr[] to store previously computed Tribonacci values.  
 3️⃣ Initialize the first three values according to the definition.  
 4️⃣ Iterate from 3 to n, building the solution bottom-up using Dynamic Programming.  
-5️⃣ Return arr[n] as the final answer.  
+5️⃣ Return arr[n] as the final answer.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(n)  
 ✨ Key Insight:
-This problem is a classic example of DP with overlapping subproblems — once the recurrence relation is clear, the solution becomes straightforward.  
+This problem is a classic example of DP with overlapping subproblems — once the recurrence relation is clear, the solution becomes straightforward.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/2556fdd5-90d2-4982-8b78-efed7b2b0f26" />
 
-
-Question: 876 – Middle of the Linked List  
+Question: 876 – Middle of the Linked List
 
 💻 Approach:  
 We are given the head of a singly linked list.  
@@ -534,7 +524,7 @@ fast → moves two steps at a time
 2️⃣ Traverse the list while fast and fast->next are not NULL.  
 3️⃣ Move slow by one node and fast by two nodes in each iteration.  
 4️⃣ When fast reaches the end of the list, slow will be at the middle.  
-5️⃣ Return the node pointed to by slow.  
+5️⃣ Return the node pointed to by slow.
 
 ⏱ Time Complexity: O(n)  
 📦 Space Complexity: O(1) (no extra memory used)  
@@ -544,57 +534,54 @@ simple, elegant, and extremely efficient.
 
 <img width="1920" height="1080" alt="Screenshot 2026-01-29 122214" src="https://github.com/user-attachments/assets/0b671ee5-7b84-4ed7-aec4-da00ef00e71e" />
 
-
-Question: 739 – Daily Temperatures  
+Question: 739 – Daily Temperatures
 
 💻 Approach:  
 We’re given a list of daily temperatures.  
 For each day, we need to find how many days ahead a warmer temperature occurs.  
 If no warmer day exists, the answer is 0.  
-To solve this efficiently, we use a Monotonic Stack.  
+To solve this efficiently, we use a Monotonic Stack.
 
 1️⃣ Create an answer array initialized with 0.  
 2️⃣ Use a stack to store indices of days (not temperatures).  
 3️⃣ Traverse the array from left to right.  
 4️⃣ While the stack isn’t empty and the current temperature is greater than the temperature at the stack’s top index:  
-    • Pop the index  
-    • Set answer[index] = current_day - index  
+ • Pop the index  
+ • Set answer[index] = current_day - index  
 5️⃣ Push the current index onto the stack.  
-6️⃣ Any index left in the stack has no warmer future day → remains 0.  
-
+6️⃣ Any index left in the stack has no warmer future day → remains 0.
 
 ⏱ Time Complexity: O(n)  
 (each index is pushed and popped at most once)  
-📦 Space Complexity: O(n)    
-(for the stack and answer array)       
+📦 Space Complexity: O(n)  
+(for the stack and answer array)  
 ✨ Key Insight:
-This problem looks like brute force at first, but recognizing the “next greater element” pattern turns it into a clean linear-time solution.  
+This problem looks like brute force at first, but recognizing the “next greater element” pattern turns it into a clean linear-time solution.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/905d8cf2-abb9-40ea-ae1a-b2a812d4e0d9" />
 
-Question: 509 – Fibonacci Number  
+Question: 509 – Fibonacci Number
 
 💻 Approach:  
-We are given a number n and asked to compute the n-th Fibonacci number, where each number is the sum of the previous two.  
+We are given a number n and asked to compute the n-th Fibonacci number, where each number is the sum of the previous two.
 
 1️⃣ If n = 0, return 0 (base case).  
 2️⃣ If n = 1, return 1 (base case).  
 3️⃣ For n > 1, recursively calculate  
-    F(n) = F(n−1) + F(n−2).  
+ F(n) = F(n−1) + F(n−2).  
 4️⃣ The recursion continues until it reaches the base cases.  
-5️⃣ The final result bubbles up through the recursive calls.  
+5️⃣ The final result bubbles up through the recursive calls.
 
-⏱ Time Complexity: O(2^n)   
+⏱ Time Complexity: O(2^n)  
 (Due to repeated calculations in naive recursion)  
 📦 Space Complexity: O(n)  
 (Recursive call stack)  
 ✨ Key Insight:  
-While recursion makes the logic very clean and intuitive, it is not the most efficient approach for larger values of n.  
+While recursion makes the logic very clean and intuitive, it is not the most efficient approach for larger values of n.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/31e11884-d49c-42d3-84ca-82fa2766b6a5" />
 
-
-Question: 389 – Find the Difference  
+Question: 389 – Find the Difference
 
 💻 Approach:  
 We are given two strings:  
@@ -605,17 +592,16 @@ Our task: identify the extra character in string t.
 2️⃣ Traverse string s and increment the frequency count of each character.  
 3️⃣ Traverse string t and decrement the frequency count of each character.  
 4️⃣ The character whose frequency is non-zero after both traversals is the extra letter.  
-5️⃣ Convert its index back to the corresponding character and return it.  
-  
+5️⃣ Convert its index back to the corresponding character and return it.
+
 ⏱ Time Complexity: O(n)  
 (Single pass over both strings)  
-📦 Space Complexity: O(1)    
-(Fixed-size array of 26 characters)    
+📦 Space Complexity: O(1)  
+(Fixed-size array of 26 characters)  
 ✨ Key Insight:  
 Using frequency counting avoids sorting and extra string manipulation, making the solution efficient and elegant.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/3dba25aa-f0cc-48c5-8668-da2fb972731e" />
-
 
 Question: 231 – Power of Two
 
@@ -625,23 +611,19 @@ We are given an integer n, and we need to determine whether it can be expressed 
 2️⃣ If n is 1, return true (since 20=12^0 = 120=1).  
 3️⃣ If n is odd, return false (all powers of two except 1 are even).  
 4️⃣ Otherwise, divide n by 2 and recursively check the result.  
-5️⃣ If the recursion eventually reaches 1, the number is a power of two.  
+5️⃣ If the recursion eventually reaches 1, the number is a power of two.
 
-⏱ Time Complexity:   
+⏱ Time Complexity:  
 O(log n) — each recursive call halves the number  
 📦 Space Complexity:  
 O(log n) — due to recursive call stack  
 ✨ Key Insight:  
 Powers of two have a very strict structure—continuous divisibility by 2 with no remainder.  
-Recognizing this pattern makes the solution straightforward and reliable.  
-
+Recognizing this pattern makes the solution straightforward and reliable.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/5856f83c-2f27-4c12-be6e-9eab5b2c6d86" />
 
-
-
-Question: 326 – Power of Three  
-
+Question: 326 – Power of Three
 
 💻 Approach:  
 We are given an integer n.  
@@ -650,22 +632,20 @@ Our task: determine whether n can be expressed as a power of 3, i.e.,n = 3^x for
 2️⃣ If n is 1, return true because 3^0 = 1.  
 3️⃣ If n is not divisible by 3, it cannot be a power of 3 → return false.  
 4️⃣ Otherwise, divide n by 3 and repeat the process recursively.  
-5️⃣ If we eventually reach 1, then the number is a power of 3.  
+5️⃣ If we eventually reach 1, then the number is a power of 3.
 
 ⏱ Time Complexity: O(log₃ n)  
-(We divide the number by 3 at every step)  
+(We divide the number by 3 at every step)
 
 📦 Space Complexity: O(log₃ n)  
-(Due to recursive function calls)  
+(Due to recursive function calls)
 
 ✨ Key Insight:  
-The problem isn’t about multiplication—it’s about reversing the process using division and checking consistency at each step.  
-
+The problem isn’t about multiplication—it’s about reversing the process using division and checking consistency at each step.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/4e3f3fdc-8935-43d8-b920-6eb855c3aab8" />
 
-
-Question: 342 – Power of Four  
+Question: 342 – Power of Four
 
 💻 Approach:  
 We are given an integer n, and our task is to determine whether it can be expressed as a power of 4.  
@@ -674,39 +654,37 @@ A number is a power of four if it can be repeatedly divided by 4 until it become
 2️⃣ If n is 1, it is already 4⁰ → return true.  
 3️⃣ If n % 4 != 0, the number cannot be divided cleanly by 4 → return false.  
 4️⃣ Otherwise, recursively check the same condition for n / 4.  
-5️⃣ If the recursion eventually reaches 1, the number is a power of four.  
+5️⃣ If the recursion eventually reaches 1, the number is a power of four.
 
 ⏱ Time Complexity: O(log₄ n)  
 (We divide the number by 4 at every recursive step)  
 📦 Space Complexity: O(log₄ n)  
 (Recursive call stack)  
 ✨ Key Insight:  
-Not every power of two is a power of four — checking divisibility by 4 repeatedly filters out the false positives.  
+Not every power of two is a power of four — checking divisibility by 4 repeatedly filters out the false positives.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d80c7a6c-8170-4296-91a7-db4d18de6652" />
 
-Question: 100 – Same Tree  
+Question: 100 – Same Tree
 
 💻 Approach:  
 We are given the roots of two binary trees p and q.  
-Our task: determine whether both trees are structurally identical and contain the same node values.   
+Our task: determine whether both trees are structurally identical and contain the same node values.  
 To solve this, we use recursive tree traversal.  
 1️⃣ If both nodes are NULL, they are identical → return true.  
 2️⃣ If one node is NULL and the other is not, structures differ → return false.  
 3️⃣ If node values are different, trees are not the same → return false.  
 4️⃣ Recursively compare the left subtrees and right subtrees of both trees.  
-5️⃣ If all checks pass, return true.  
-
+5️⃣ If all checks pass, return true.
 
 ⏱ Time Complexity: O(n)  
 (each node is visited once)  
 📦 Space Complexity: O(h)  
-(recursion stack, where h is the height of the tree)  
+(recursion stack, where h is the height of the tree)
 
 ✨ Key Insight:  
 Two trees aren’t the same just because they contain the same values —  
-👉 structure matters just as much as data.  
-
+👉 structure matters just as much as data.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4bd47714-cf27-4159-929a-9a3646cd8d99" />
 
@@ -734,8 +712,6 @@ left child of a with right child of b
 right child of a with left child of b
 
 6️⃣ The tree is symmetric if isMirror(root->left, root->right) returns true.
-
-
 
 ⏱ Time Complexity: O(n)
 (Each node is visited once)
@@ -798,7 +774,6 @@ The moment you hit NULL, you’ve found the perfect spot.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/692e6732-c4ce-44f0-baaf-33f01aa5bdb5" />
 
-
 Question: 230 – Kth Smallest Element in a BST
 
 💻 Approach:
@@ -837,7 +812,6 @@ You don’t need to store the full inorder traversal — stop as soon as k hits 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/78f374e6-f397-4dc1-90a6-c5673bf4498e" />
 
-
 Question: 144 – Binary Tree Preorder Traversal
 
 💻 Approach:
@@ -862,7 +836,6 @@ Preorder follows the order:
 
 This is implemented using a helper dfs() function that performs the recursive traversal.
 
-
 ⏱ Time Complexity: O(n)
 Every node is visited exactly once.
 
@@ -879,7 +852,6 @@ For preorder, always think:
 “Process first, then explore.”
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d3e95e05-93a3-434f-afd5-3c58cc6dc9c5" />
-
 
 Question: 94 – Binary Tree Inorder Traversal
 
@@ -921,7 +893,6 @@ Half the battle is already won.
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/5ad2240e-cc08-473b-807b-c0d3439c94e6" />
 
-
 Question: 145 – Binary Tree Postorder Traversal
 
 💻 Approach:
@@ -957,3 +928,49 @@ The order of operations in recursion matters.
 Placing res.push_back(root->val) at the end ensures true postorder behavior.
 
 <img width="1920" height="1080" alt="Screenshot 2026-01-29 105810" src="https://github.com/user-attachments/assets/2dae1b22-ed9c-4dae-85ca-d315cb069728" />
+
+Question: 98 – Validate Binary Search Tree
+
+💻 Approach:
+
+We are given the root of a binary tree.
+
+Our task: determine whether it satisfies the properties of a valid Binary Search Tree (BST).
+
+A valid BST must follow:
+
+Left subtree values < current node
+
+Right subtree values > current node
+
+Both subtrees must also be valid BSTs
+
+1️⃣ Instead of checking only immediate children, we maintain a valid value range for each node.
+
+2️⃣ Start with the widest possible range:
+(-∞, +∞)
+
+3️⃣ For each node:
+
+If its value is not strictly within (minVal, maxVal), return false.
+
+4️⃣ Recursively validate:
+
+Left subtree with updated range (minVal, current node value)
+
+Right subtree with updated range (current node value, maxVal)
+
+5️⃣ If all nodes satisfy their valid ranges, return true.
+
+⏱ Time Complexity: O(n)
+(We visit each node exactly once)
+
+📦 Space Complexity: O(h)
+(Recursive call stack, where h is tree height)
+
+✨ Key Insight:
+
+The real trick isn’t comparing left and right —
+it’s carrying the correct boundaries down the recursion.
+
+![alt text](<Screenshot 2026-01-29 103443.png>)
