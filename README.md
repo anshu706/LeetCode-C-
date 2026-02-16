@@ -1021,3 +1021,45 @@ it’s carrying the correct boundaries down the recursion.
 
 <img width="1920" height="1080" alt="Screenshot 2026-01-29 103443" src="https://github.com/user-attachments/assets/fec6353a-1e02-4315-8b07-d535d68bc504" />
 
+Question: 287 – Find the Duplicate Number
+
+💻 Approach:
+
+We are given an array nums containing n + 1 integers, where each integer is in the range [1, n].
+
+Since there are more numbers than the range allows, at least one number must be repeated (Pigeonhole Principle 🐦).
+
+In this solution, we use a hashing (frequency array) approach:
+
+1️⃣ Create a frequency array hash of size n + 1, initialized with 0.
+
+2️⃣ Traverse through the given array nums.
+
+3️⃣ For each element, increment its count in the hash array.
+
+4️⃣ If any element’s frequency becomes 2, return that element immediately (duplicate found).
+
+5️⃣ If no duplicate is found (which won’t happen as per constraints), return -1.
+
+⏱ Time Complexity: O(n)
+
+📦 Space Complexity: O(n) (extra frequency array used)
+
+✨ Key Insight:
+
+The key observation is that with n + 1 numbers in range [1, n], duplication is guaranteed.
+
+Tracking frequencies makes detection straightforward and efficient.
+
+⚠️ Note:
+
+This approach uses extra space, but the problem specifically asks to solve it using constant extra space and without modifying the array.
+
+An optimized solution would use Floyd’s Cycle Detection (Tortoise and Hare Algorithm) to achieve:
+
+⏱ Time Complexity: O(n)
+
+📦 Space Complexity: O(1)
+
+<img width="1920" height="1080" alt="Screenshot 2026-01-29 111248" src="https://github.com/user-attachments/assets/3fc56774-fc47-449a-9311-6a47c4ad1c32" />
+
