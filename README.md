@@ -1063,3 +1063,50 @@ An optimized solution would use Floyd’s Cycle Detection (Tortoise and Hare Alg
 
 <img width="1920" height="1080" alt="Screenshot 2026-01-29 111248" src="https://github.com/user-attachments/assets/3fc56774-fc47-449a-9311-6a47c4ad1c32" />
 
+Question: 11 – Container With Most Water
+
+💻 Approach:
+
+We are given an array where each element represents the height of a vertical line.
+
+Our task: choose two lines such that together with the x-axis, they form a container holding the maximum amount of water.
+
+1️⃣ Initialize two pointers:
+
+lp at the beginning (0)
+
+rp at the end (n - 1)
+
+2️⃣ Calculate the width between them:
+width = rp - lp
+
+3️⃣ The height of water is limited by the shorter line:
+height = min(height[lp], height[rp])
+
+4️⃣ Compute current water stored:
+area = width * height
+Update maxWater if this area is greater.
+
+5️⃣ Move the pointer pointing to the smaller height inward:
+
+If height[lp] < height[rp], increment lp
+
+Else, decrement rp
+
+6️⃣ Continue until lp < rp
+
+7️⃣ Return maxWater
+
+⏱ Time Complexity: O(n)
+(Each pointer moves at most n times)
+
+📦 Space Complexity: O(1)
+(Only variables used, no extra space)
+
+✨ Key Insight:
+
+Always move the pointer at the shorter height — because moving the taller one can never increase the area.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/02b6baf3-ff72-4904-9498-044f273f2ac2" />
+
+
