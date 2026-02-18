@@ -1109,4 +1109,34 @@ Always move the pointer at the shorter height — because moving the taller one 
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/02b6baf3-ff72-4904-9498-044f273f2ac2" />
 
+Question: 238 – Product of Array Except Self
+
+💻 Approach:
+
+We are given an integer array nums.
+
+Our task: return an array answer where answer[i] is the product of all elements except nums[i], without using division and in O(n) time.
+
+1️⃣ Create an output array ans of size n, initialized with 1.
+
+2️⃣ First Pass (Prefix Product):
+Traverse from left to right.
+For each index i, store the product of all elements before it.
+ans[i] = ans[i-1] * nums[i-1]
+
+3️⃣ Maintain a variable suffix = 1 to store product of elements to the right.
+
+4️⃣ Second Pass (Suffix Product):
+Traverse from right to left.
+Update suffix *= nums[i+1]
+Multiply ans[i] *= suffix
+
+5️⃣ Return the final ans array.
+
+⏱ Time Complexity: O(n)
+
+📦 Space Complexity: O(1) (excluding output array)
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/ab59de45-290d-4ed5-aa82-79e9675ca72c" />
+
 
