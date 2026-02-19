@@ -1139,4 +1139,25 @@ Multiply ans[i] *= suffix
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/ab59de45-290d-4ed5-aa82-79e9675ca72c" />
 
+Question: 242 – Valid Anagram
+💻 Approach:
+We are given two strings s and t.
+Our task: check whether t is an anagram of s (both contain the same characters with the same frequency).
+1️⃣ First, check if the lengths of both strings are equal.
+If not, they can’t be anagrams → return false.
+2️⃣ Create a frequency array of size 26 (for lowercase English letters).
+3️⃣ Traverse string s and increment the count for each character.
+4️⃣ Traverse string t and decrement the count for each character.
+5️⃣ Finally, check the frequency array:
+If all values are 0 → both strings have identical character counts → return true.
+If any value is not 0 → return false.
+
+⏱ Time Complexity: O(n)
+(We traverse both strings once.)
+📦 Space Complexity: O(1)
+(Fixed size array of 26 characters.)
+✨ Key Insight:
+Instead of sorting both strings (O(n log n)), using a frequency array gives us a linear-time solution.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/fa5cb626-6cc1-4e3a-827a-09cc364babf9" />
 
