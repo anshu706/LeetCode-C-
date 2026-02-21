@@ -1179,3 +1179,35 @@ Instead of sorting both strings (O(n log n)), using a frequency array gives us a
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/fa5cb626-6cc1-4e3a-827a-09cc364babf9" />
 
+
+Question: 387 – First Unique Character in a String
+
+💻 Approach:
+
+We are given a string s consisting of lowercase English letters.
+
+Our task: find the index of the first non-repeating character. If no such character exists, return -1.
+
+1️⃣ Create a frequency array of size 26 (for lowercase letters) and initialize all values to 0.
+
+2️⃣ Traverse the string once and increment the count of each character using:
+arr[s[i] - 'a']++
+
+3️⃣ Traverse the string again from index 0:
+
+If the frequency of the current character is 1, return its index immediately.
+
+4️⃣ If no character has frequency 1, return -1.
+
+⏱ Time Complexity: O(n)
+(Two linear passes over the string)
+
+📦 Space Complexity: O(1)
+(Fixed-size array of 26 characters)
+
+✨ Key Insight:
+
+Using a fixed-size frequency array is more efficient than using a map because the input is limited to lowercase English letters.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/dd0fc97b-1c08-485d-a9eb-82dec1a480b4" />
+
