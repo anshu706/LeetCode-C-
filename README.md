@@ -1211,3 +1211,48 @@ Using a fixed-size frequency array is more efficient than using a map because th
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/dd0fc97b-1c08-485d-a9eb-82dec1a480b4" />
 
+Question: 103 – Binary Tree Zigzag Level Order Traversal
+
+💻 Approach:
+
+We are given the root of a binary tree.
+
+Our task: return the level order traversal of its nodes' values in zigzag order (alternate left-to-right and right-to-left).
+
+1️⃣ If the root is NULL, return an empty result.
+
+2️⃣ Use a queue to perform Breadth-First Search (Level Order Traversal).
+
+3️⃣ For each level:
+
+Get the current size of the queue (number of nodes in that level).
+
+Create a temporary vector to store node values of that level.
+
+Traverse all nodes of the current level.
+
+4️⃣ Maintain a boolean flag (leftToRight):
+
+If true → insert values from left to right.
+
+If false → insert values from right to left (by reversing index placement).
+
+5️⃣ After finishing a level, toggle the direction flag.
+
+6️⃣ Push the level result into the final answer.
+
+7️⃣ Return the final zigzag traversal.
+
+⏱ Time Complexity: O(n)
+Each node is visited exactly once.
+
+📦 Space Complexity: O(n)
+Queue + result storage in worst case.
+
+✨ Key Insight:
+
+Instead of reversing each level, we can directly place elements at correct indices using the zigzag direction flag — making it more efficient and clean.
+
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/1d471222-da5d-4a19-896e-d33416908a78" />
+
