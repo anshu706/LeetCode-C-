@@ -1256,3 +1256,53 @@ Instead of reversing each level, we can directly place elements at correct indic
 
 <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/1d471222-da5d-4a19-896e-d33416908a78" />
 
+Question: 105 – Construct Binary Tree from Preorder and Inorder Traversal
+
+💻 Approach:
+
+We are given two arrays:
+
+Preorder traversal (Root → Left → Right)
+
+Inorder traversal (Left → Root → Right)
+
+Our task: reconstruct the original binary tree.
+
+1️⃣ The first element of preorder is always the root of the tree.
+
+2️⃣ Using a hash map, store the index of each element in inorder for O(1) lookup.
+
+3️⃣ Find the root’s index in inorder to divide the tree into:
+
+Left subtree (elements before root index)
+
+Right subtree (elements after root index)
+
+4️⃣ Recursively build:
+
+Left subtree first (since preorder processes left before right)
+
+Then right subtree
+
+5️⃣ Continue until the left index exceeds the right index (base case).
+
+⏱ Time Complexity: O(n)
+
+Each node is processed once.
+
+Hash map ensures O(1) lookup.
+
+📦 Space Complexity: O(n)
+
+Hash map storage
+
+Recursive call stack (worst case skewed tree)
+
+✨ Key Insight:
+
+The critical trick is realizing that preorder gives the root instantly, and inorder helps divide the problem into smaller subtrees.
+
+Without the hash map, searching in inorder would make the solution O(n²).
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/70d73d0e-f132-4f8e-8828-8c2c04ea5f4f" />
+
