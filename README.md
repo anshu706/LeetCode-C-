@@ -1306,3 +1306,48 @@ Without the hash map, searching in inorder would make the solution O(n²).
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/70d73d0e-f132-4f8e-8828-8c2c04ea5f4f" />
 
+Question: 106 – Construct Binary Tree from Inorder and Postorder Traversal
+
+💻 Approach:
+
+We are given two traversals of a binary tree:
+
+Inorder → Left → Root → Right
+
+Postorder → Left → Right → Root
+
+Our task: reconstruct the original binary tree.
+
+1️⃣ The last element of postorder is always the root of the current subtree.
+
+2️⃣ Use a hash map to store the index of each value in the inorder array for O(1) lookup.
+
+3️⃣ Find the root’s index in inorder to divide the tree into:
+
+Left Subtree → elements before root index
+
+Right Subtree → elements after root index
+
+4️⃣ Since postorder processes nodes as Left → Right → Root,
+while traversing backward, we must:
+
+Build the right subtree first
+
+Then build the left subtree
+
+5️⃣ Use recursion to repeat this process until the subtree range becomes invalid.
+
+⏱ Time Complexity: O(n)
+(Each node is processed once, hashmap ensures O(1) lookup)
+
+📦 Space Complexity: O(n)
+(HashMap + recursion stack in worst case)
+
+✨ Key Insight:
+
+The most important trick is building the right subtree first because we are consuming postorder from the end.
+
+Understanding traversal properties deeply makes tree construction problems much easier.
+
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/eca53b86-04cb-4719-8a06-cd9f61df8ca6" />
+
